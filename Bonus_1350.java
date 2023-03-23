@@ -25,16 +25,28 @@ public class Bonus_1350 {
             int input = in.nextInt();
 
             switch (input) {
-                case 1: printMenu();
-                case 2: sumNumbers();
-                case 3: multiplyNumbers();
-                case 4: subString();
-                case 5: fahrenheitToCelsius();
-                case 6: celsiusTofahrenheit();
-                case 7: multiplicationTable();
-                case 8: randomNum();
-                case 9: factorial();
-                case 10: sortThreeNumbers();
+                case 1:
+                    printMenu();
+                case 2:
+                    sumNumbers();
+                case 3:
+                    multiplyNumbers();
+                case 4:
+                    subString();
+                case 5:
+                    fahrenheitToCelsius();
+                case 6:
+                    celsiusTofahrenheit();
+                case 7:
+                    multiplicationTable();
+                case 8:
+                    randomNum();
+                case 9:
+                    factorial();
+                case 10:
+                    sortThreeNumbers();
+                case 11:
+                    lexicorgraphically();
                 case 12:
                     System.out.println("Exiting...");
                     break;
@@ -214,9 +226,30 @@ public class Bonus_1350 {
     // Method for Lexicographically.
     public static void lexicorgraphically() {
         System.out.print("String One: ");
+        String strOne = in.next();
         System.out.print("String Two: ");
+        String strTwo = in.next();
         System.out.print("String Three: ");
+        String strThree = in.next();
 
+        // saving values to a string array.
+        String[] arr = { strOne, strTwo, strThree };
 
+        // Comparing each string and sorting..
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length; i++) {
+                if (arr[i].compareTo(arr[j]) > 0) {
+                    String tempVariable = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tempVariable;
+                }
+            }
+        }
+
+        // printing each value out of the sorted array.
+        System.out.println("Here is your sorted Strings: ");
+        System.out.println(arr[0]);
+        System.out.println(arr[1]);
+        System.out.println(arr[2]);
     }
 }
